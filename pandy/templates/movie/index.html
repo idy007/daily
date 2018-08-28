@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>{% if page_title %}{{ page_title }} {% else %}炸弹网-专注影视网盘资源分享{% endif %}</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        p {
+            text-align: center;
+        }
+
+        .pub_date {
+            font-size: 14px;
+            color: #9999CC;
+        }
+    </style>
+</head>
+
+<body>
+    <div align="center">
+        <!-- 导航栏 -->
+        {% include 'index/navbar.html' %}
+    </div>
+    <!-- align="center" End -->
+
+    <!-- 推广微信图文消息 -->
+    <!--
+    <a href="https://mp.weixin.qq.com/s/KaZfTNhmu8AM63QDfVjU2g" style="padding-top:100px,"><img src="https://upload-images.jianshu.io/upload_images/5649568-f878eff64c05fb95.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"  width=100% /> </a> <br />
+    -->
+
+    <!-- 当屏幕为手机屏幕大小时，展示手机端搜索框 -->
+    {% include 'movie/search_box_for_mobile.html' %}
+
+    <div class="container">
+        <div class="row">
+
+            <!-- 2/3 窗口 -->
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                <!-- 电影列表 -->
+                {% include 'movie/movie_list.html' %}
+            </div>
+
+            <!-- 1/3 窗口 -->
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <!-- 判断是否需要展示 热搜榜 -->
+                {% if resou_movie_list %}
+                    {% include 'movie/resou_movie_bar.html' %}
+                {% endif %}
+
+                <!-- 微信公众号吸粉广告 -->
+                {% include 'index/wechat_ad.html' %}
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 页码 -->
+    <!-- 根据不同的函数 展示不同的分页文件，因为不同函数对应结果列表的url不同 -->
+    <!-- search 使用 -->
+    {% if url_name == "movie_search_navbar" %}
+        {% include 'movie/paginator_for_search.html' %}
+    <!-- index 和 index_by_page 使用 -->
+    {% else %}
+        {% include 'movie/paginator_for_index.html' %}
+    {% endif %}
+
+
+    <!-- 页脚 -->
+    {% include 'index/footer.html' %}
+
+
+</body>
+
+</html>
