@@ -34,7 +34,7 @@ reply_info_state=1
 # 在线播放
 baseUrl1='http://m.bjwxzs.com.cn/index.php/home/index/search.html?k='
 # 百度网盘 链接
-baseUrl2='http://rrsmovie.com/movie/?movie_name='
+baseUrl2='http://rrsmovie.com/movie/search/?movie_name='
 
 @robot.subscribe
 def subscribe(message):
