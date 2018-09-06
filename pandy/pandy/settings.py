@@ -139,5 +139,5 @@ EMAIL_HOST = 'smtp.qq.com'  # 如果是 163 改成 smtp.163.com
 EMAIL_PORT = 465
 EMAIL_HOST_USER = '372349342@qq.com' # 帐号
 # EMAIL_HOST_PASSWORD = 'bdfouuatccmjbhde'  # 密码
-EMAIL_HOST_PASSWORD = 'njalrqjwvuowcafc'  # 密码
+EMAIL_HOST_PASSWORD = 'kfufyuvwoyjrbjgi'  # 密码
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
