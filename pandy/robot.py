@@ -42,7 +42,7 @@ def subscribe(message):
     global adtuple
     global adtuple2
     outlist=[]
-    outlist.append(['公众号免费看电影教程','','https://s1.ax1x.com/2018/06/02/CogADx.png','https://w.url.cn/s/AGW9n4L'])
+    outlist.append(['公众号免费看电影教程','','https://s1.ax1x.com/2018/06/02/CogADx.png','http://mp.weixin.qq.com/s?__biz=MzA3MTk5NjgwOA==&mid=300291528&idx=1&sn=bb0f519633fbbe79c1a94defc6b1f0b7&chksm=0b37b12f3c4038399cea05d9702ce09077c13afd757dde5080126404eb091d7cbf9c0aacc2fa#rd'])
     if adtuple:
         if ad1_state:
             outlist.append(adtuple)
@@ -268,6 +268,8 @@ def reply_info_bygenurl(v_name):
     # 当ad1或者ad2至少存在一个时才会插入该文章
     if ad1_state+ad2_state:
         out_list.append(['■ 亲爱的，每天看电影时帮我点一下上面的小说呗','','https://t1.picb.cc/uploads/2018/05/21/2azICG.jpg','https://w.url.cn/s/ARlJPBS'])
+
+    out_list.append(['■ 亲爱的，每次拿资源时候帮我点一下这个广告呗，只点一下就行的~','','','https://mp.weixin.qq.com/s?__biz=MzA3MTk5NjgwOA==&mid=300291573&idx=1&sn=6a2ba9b550d911aee15716dcc0f82775&chksm=0b37b1123c403804675c747a9c865b49cb2a7e5b12cecfe544aa665c1355034d6ed694f190bf#rd'])
     return out_list
 
 def insertadarticles(message_content):
