@@ -139,7 +139,20 @@ def hello(message):
     elif reply_info_state==2:
         articles=reply_info_bygenurl(v_name)
 
-    return articles
+    rel_str=genHtml(articles)
+
+    return rel_str
+
+    # return articles
+
+def genHtml(articles):
+    rel_str=''
+    ar_str_cnt=0
+    for ar in articles:
+        ar_str_cnt += 1
+        rel_str+='['+str(ar_str_cnt)+']  '+'<a href="'+ar[-1]+'">'+ar[0]+'</a>'+'\n\n\n'
+
+    return rel_str.strip()
 
 # 替换用户发来的电影名字中的错别字
 def modefy_name(v_name):
@@ -270,6 +283,7 @@ def reply_info_bygenurl(v_name):
         out_list.append(['■ 亲爱的，每天看电影时帮我点一下上面的小说呗','','https://t1.picb.cc/uploads/2018/05/21/2azICG.jpg','https://w.url.cn/s/ARlJPBS'])
 
     out_list.append(['■ 亲爱的，每次拿资源时候帮我点一下这个广告呗，只点一下就行的~','','https://s1.ax2x.com/2018/09/24/5HMVnK.jpg','https://mp.weixin.qq.com/s?__biz=MzA3MTk5NjgwOA==&mid=300291573&idx=1&sn=6a2ba9b550d911aee15716dcc0f82775&chksm=0b37b1123c403804675c747a9c865b49cb2a7e5b12cecfe544aa665c1355034d6ed694f190bf#rd'])
+    out_list.append(['给大家发红包啦，点击即可领取。','','','http://mp.weixin.qq.com/s?__biz=MzA3MTk5NjgwOA==&mid=300291745&idx=1&sn=6a7e640ab20eca8cf2e4d202f44b02fc&chksm=0b37b2463c403b50bd82c5913314b408a6c15defc089db267c6e3813e6a2ac2a04af1e409570#rd'])
     return out_list
 
 def insertadarticles(message_content):
